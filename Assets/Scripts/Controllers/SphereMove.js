@@ -17,21 +17,26 @@ var fingerHold : boolean;
 var startPos: Vector2;
 var endPos: Vector2;
 
+var joystick : Joystick;
+
 function FixedUpdate(){
 	Debug.Log("TEST: "+Input.GetKey("up"));
-	if(Input.GetKey("up")){
+	if(Input.GetKey("up") || joystick.position.y > 0){
+		Debug.Log("dupa joy");
 		rigidbody.AddForce(Vector3.forward * speed * Time.deltaTime);
 	}
-	if(Input.GetKey("down")){
+	if(Input.GetKey("down") || joystick.position.y < 0){
+		Debug.Log("dupa joy");
 		rigidbody.AddForce(0,0,1 * (-speed) * Time.deltaTime);
 	}
-	if(Input.GetKey("left")){
+	if(Input.GetKey("left") || joystick.position.x < 0){
+		Debug.Log("dupa joy");
 		rigidbody.AddForce(Vector3.left * speed * Time.deltaTime);
 	}
-	if(Input.GetKey("right")){
+	if(Input.GetKey("right") || joystick.position.x > 0){
+		Debug.Log("dupa joy");
 		rigidbody.AddForce(Vector3.right * speed * Time.deltaTime);
 	}
-	
 	
 	// Applies an explosion force to all nearby rigidbodies
     var explosionPos : Vector3 = transform.position;
@@ -45,13 +50,8 @@ function FixedUpdate(){
         	}	
         }
     }
-    
-    if (Input.GetKeyDown(KeyCode.Escape)) {
-            //PlayGamesPlatform.Instance.RealTime.LeaveRoom();
-            Application.Quit();
-        }
 
-        if(Input.touchCount > 0){
+        /*if(Input.touchCount > 0){
             var touch : Touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Began){
                 startPos = touch.position;
@@ -75,11 +75,17 @@ function FixedUpdate(){
                 horizontal = true;
             }
 
-        var movement : Vector3 = new Vector3(deltaX , 0, deltaY );
-        rigidbody.AddForce(movement * 20 * Time.deltaTime);
-	}
+	        var movement : Vector3 = new Vector3(deltaX , 0, deltaY );
+	        rigidbody.AddForce(movement * 20 * Time.deltaTime);
+		}*/
 	
 }
+
+function Update () {	
+		if (Input.GetKeyDown(KeyCode.Escape)) { 
+			Application.Quit();
+		}
+	}
 
 function OnCollisionEnter(collision : Collision) {
 	//1.Version static speed 
@@ -293,7 +299,7 @@ function FixedUpdate(){
  }*/
  
  function Start(){
- 	QualitySettings.antiAliasing = 2;
+ 	//QualitySettings.antiAliasing = 2;
  }
  
  

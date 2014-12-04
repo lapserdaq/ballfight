@@ -10,7 +10,7 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: ballfight
   productName: 2
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -73,7 +73,7 @@ PlayerSettings:
   productGUID: 5083af7ba576ebd4eacae3b2be0814f3
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 9
+  AndroidMinSdkVersion: 14
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -103,7 +103,7 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: C:/Users/zzzz/Downloads/key.keystore
+  AndroidKeystoreName: D:/key.keystore
   AndroidKeyaliasName: key
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:

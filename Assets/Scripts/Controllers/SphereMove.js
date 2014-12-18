@@ -21,23 +21,22 @@ var joystick : Joystick;
 
 function FixedUpdate(){
 	Debug.Log("TEST: "+Input.GetKey("up"));
-	if(Input.GetKey("up") || joystick.position.y > 0){
-		Debug.Log("dupa joy");
+	if(Input.GetKey("up")){
 		rigidbody.AddForce(Vector3.forward * speed * Time.deltaTime);
 	}
-	if(Input.GetKey("down") || joystick.position.y < 0){
-		Debug.Log("dupa joy");
+	if(Input.GetKey("down")){
 		rigidbody.AddForce(0,0,1 * (-speed) * Time.deltaTime);
 	}
-	if(Input.GetKey("left") || joystick.position.x < 0){
-		Debug.Log("dupa joy");
+	if(Input.GetKey("left")){
 		rigidbody.AddForce(Vector3.left * speed * Time.deltaTime);
 	}
-	if(Input.GetKey("right") || joystick.position.x > 0){
-		Debug.Log("dupa joy");
+	if(Input.GetKey("right")){
 		rigidbody.AddForce(Vector3.right * speed * Time.deltaTime);
 	}
 	
+	rigidbody.AddForce(Vector3.forward * joystick.position.y * speed * Time.deltaTime);
+	rigidbody.AddForce(Vector3.right * joystick.position.x * speed * Time.deltaTime);
+		
 	// Applies an explosion force to all nearby rigidbodies
     var explosionPos : Vector3 = transform.position;
     // get all colliders touching or inside the imaginary sphere:

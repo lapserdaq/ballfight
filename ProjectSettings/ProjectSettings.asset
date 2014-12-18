@@ -67,7 +67,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.ballfight
+  iPhoneBundleIdentifier: com.mz.ball.game
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 5083af7ba576ebd4eacae3b2be0814f3

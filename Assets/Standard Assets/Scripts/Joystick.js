@@ -82,6 +82,7 @@ function Start()
 		guiBoundary.max.x = defaultRect.x + guiTouchOffset.x;
 		guiBoundary.min.y = defaultRect.y - guiTouchOffset.y;
 		guiBoundary.max.y = defaultRect.y + guiTouchOffset.y;
+		
 	}
 }
 
@@ -114,6 +115,41 @@ function LatchedFinger( fingerId : int )
 	if ( lastFingerId == fingerId )
 		ResetJoystick();
 }
+
+
+function getCircleBoundary(guiTouchPos : Vector2) {
+	var arr = new Array ();
+	arr.length = 4;
+	var r2 = defaultRect.width * defaultRect.width / 4;
+	
+	var val = Mathf.Clamp(guiTouchPos.y - defaultRect.y, - guiTouchOffset.y, guiTouchOffset.y);
+	arr[0] = guiCenter.x + Mathf.Sqrt(r2 - val * val);	
+	arr[1] = guiCenter.x - Mathf.Sqrt(r2 - val * val);	
+	val = Mathf.Clamp(guiTouchPos.x - defaultRect.x, - guiTouchOffset.x, guiTouchOffset.x);
+	arr[2] = guiCenter.y + Mathf.Sqrt(r2 - val * val);	
+	arr[3] = guiCenter.y - Mathf.Sqrt(r2 - val * val);	
+	
+	
+		
+	/*arr[0] = Mathf.Min(guiTouchPos.x, defaultRect.x + guiTouchOffset.x);
+	arr[1] = Mathf.Max(guiTouchPos.x, defaultRect.x - guiTouchOffset.x);	
+	arr[2] = Mathf.Min(guiTouchPos.y, defaultRect.y + guiTouchOffset.y);	
+	arr[3] = Mathf.Max(guiTouchPos.y, defaultRect.y - guiTouchOffset.y);
+	*/
+	
+	return arr;
+}
+
+function calculateBoundary(guiTouchPos : Vector2) {
+	var arr = getCircleBoundary(guiTouchPos);
+	
+	/*guiBoundary.max.x = arr[0];
+	guiBoundary.min.x = arr[1];
+	guiBoundary.max.y = arr[2];
+	guiBoundary.min.y = arr[3];*/
+	
+}
+
 
 function Update()
 {	
@@ -199,7 +235,8 @@ function Update()
 					position.y = Mathf.Clamp( ( touch.position.y - fingerDownPos.y ) / ( touchZone.height / 2 ), -1, 1 );
 				}
 				else
-				{					
+				{						
+					//calculateBoundary(guiTouchPos);			
 					// Change the location of the joystick graphic to match where the touch is
 					gui.pixelInset.x =  Mathf.Clamp( guiTouchPos.x, guiBoundary.min.x, guiBoundary.max.x );
 					gui.pixelInset.y =  Mathf.Clamp( guiTouchPos.y, guiBoundary.min.y, guiBoundary.max.y );		

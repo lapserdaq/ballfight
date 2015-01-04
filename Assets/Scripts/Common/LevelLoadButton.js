@@ -9,7 +9,7 @@ function OnGUI(){
 	}
 	
 	if(GUI.Button (Rect(20,70,120,20), "Football field 2")){
-		Application.LoadLevel("football-field2");
+		Application.LoadLevel("football-field-2");
 	}
 
 }

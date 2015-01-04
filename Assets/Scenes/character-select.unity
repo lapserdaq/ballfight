@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61ee7e8c0eccdb469c34fead9ff4ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCharacter: 0
 --- !u!114 &32692662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,10 +237,6 @@ Prefab:
     - target: {fileID: 5400000, guid: 34f865a31eb1e8449ab0dd1942468ae1, type: 2}
       propertyPath: m_IsKinematic
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400002, guid: 34f865a31eb1e8449ab0dd1942468ae1, type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34f865a31eb1e8449ab0dd1942468ae1, type: 2}
@@ -344,7 +341,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 360956929}
   m_GameObject: {fileID: 829666827}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ead54c894627ce4682c2e852f2cc815, type: 3}
   m_Name: 
@@ -429,10 +426,6 @@ Prefab:
     - target: {fileID: 5400000, guid: c2b6a43fe0fbd2044a945a78f7fc903d, type: 2}
       propertyPath: m_IsKinematic
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: c2b6a43fe0fbd2044a945a78f7fc903d, type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b6a43fe0fbd2044a945a78f7fc903d, type: 2}
@@ -549,7 +542,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1049122784}
   m_GameObject: {fileID: 987488232}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ead54c894627ce4682c2e852f2cc815, type: 3}
   m_Name: 
@@ -622,10 +615,6 @@ Prefab:
     - target: {fileID: 5400000, guid: f9097d564825fe242ab45eb09cb6d514, type: 2}
       propertyPath: m_IsKinematic
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: f9097d564825fe242ab45eb09cb6d514, type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9097d564825fe242ab45eb09cb6d514, type: 2}
@@ -742,7 +731,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 952605781}
   m_GameObject: {fileID: 1183889412}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ead54c894627ce4682c2e852f2cc815, type: 3}
   m_Name: 

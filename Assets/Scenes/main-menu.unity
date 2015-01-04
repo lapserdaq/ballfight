@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ffb4f8643f7b04284ac7bcf28b42a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: football-field
+  levelToLoad: character-select
   soundhover: {fileID: 0}
   beep: {fileID: 0}
   QuitButton: 0

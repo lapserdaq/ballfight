@@ -790,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &576658372
 Renderer:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &785375259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,6 +1468,7 @@ GameObject:
   - 23: {fileID: 989142747}
   - 54: {fileID: 989142751}
   - 114: {fileID: 989142752}
+  - 114: {fileID: 989142753}
   m_Layer: 0
   m_Name: Opponent
   m_TagString: FallingCollider
@@ -1552,7 +1553,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec1b2b8cbccb284d8df19229abccd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1927310071}
+  player: {fileID: 576658379}
+--- !u!114 &989142753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989142746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46d7526c0e1bd34d8e63ad818b80d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1166250822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1880,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f9097d564825fe242ab45eb09cb6d514, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9097d564825fe242ab45eb09cb6d514, type: 2}
   m_RootGameObject: {fileID: 1927310063}
@@ -1956,7 +1972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1910844702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,7 +2102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1927310064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2272,6 +2288,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2b6a43fe0fbd2044a945a78f7fc903d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b6a43fe0fbd2044a945a78f7fc903d, type: 2}
   m_RootGameObject: {fileID: 1910844701}
@@ -2396,6 +2416,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 34f865a31eb1e8449ab0dd1942468ae1, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 34f865a31eb1e8449ab0dd1942468ae1, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

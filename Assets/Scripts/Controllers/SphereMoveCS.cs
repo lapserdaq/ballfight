@@ -193,7 +193,7 @@ public class SphereMoveCS : MonoBehaviour {
 		byte[] bytes = new byte[12];
 		BitConverter.GetBytes (MainObject.POINTS).CopyTo (bytes, 0);
 		BitConverter.GetBytes (game.player1Points).CopyTo (bytes, 4);
-		BitConverter.GetBytes (game.player1Points).CopyTo (bytes, 8);		
+		BitConverter.GetBytes (game.player2Points).CopyTo (bytes, 8);		
 		
 		PlayGamesPlatform.Instance.RealTime.SendMessageToAll(false, bytes);
 	}
@@ -236,13 +236,14 @@ public class MultiListener : RealTimeMultiplayerListener {
 			float rot2Z = BitConverter.ToSingle (data, 52);
 			float rot2W = BitConverter.ToSingle (data, 56);	
 
-			playerController.opponentPosition = (new Vector3 (posX, posY, posZ));
+			playerController.opponentPosition = new Vector3 (posX, posY, posZ);
 			playerController.opponentRotation = new Quaternion (rotX, rotY, rotZ, rotW);
 			playerController.myPosition = new Vector3 (pos2X, pos2Y, pos2Z);
 			playerController.myRotation = new Quaternion (rot2X, rot2Y, rot2Z, rot2W);
 		} else if (type == MainObject.POINTS) {
-			playerController.game.player1Points = (int) BitConverter.ToSingle (data, 4);
-			playerController.game.player2Points = (int) BitConverter.ToSingle (data, 8);
+			playerController.game.player1Points = BitConverter.ToInt32 (data, 4);
+			playerController.game.player2Points = BitConverter.ToInt32 (data, 8);
+			Debug.Log ("POINTS" + BitConverter.ToInt32 (data, 4) + "|" + BitConverter.ToInt32 (data, 8));
 			playerController.game.updatePoints();
 		}
 	}	
@@ -251,7 +252,7 @@ public class MultiListener : RealTimeMultiplayerListener {
 	}
 	
 	public void OnRoomSetupProgress(float progress) {
-		
+		Debug.Log ("dupa" + progress.ToString());		
 	}
 	
 	public void OnLeftRoom() {
